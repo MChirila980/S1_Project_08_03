@@ -4,78 +4,70 @@
    New Perspectives on HTML and CSS, 7th Edition
    Tutorial 6
    Case Problem 3
-
    Calendar Style Sheet
-   Author: Melinda Chirila
-   Date:   12/17/2018
-
+   Author: Melinda C
+   Date:   12-18-18
    Filename:   lht_tables.css
-
 */
 
 /* ===============================
    Mobile Styles: 0px to 640px 
    ===============================
 */
-/*  */
-
 @media only screen and (max-width: 640px) {
 
+    table,
+    tbody,
+    tr,
+    td,
+    th,
+    caption {
+        display: block;
+    }
 
+    thead tr {
+        display: none;
+    }
 
-table, tbody, tr, td, th, caption {
-    display: block;
+    caption {
+        color: white;
+        background-color: gray;
+        font-size: 1.5em;
+        line-height: 2em;
+    }
 
+    td {
+        border: 1px dotted gray;
+        color: rgb(11, 12, 145);
+        position: relative;
+        padding-left: 40%;
+        min-height: 40px;
+    }
+
+    tr:nth-of-type(odd) {
+        background: rgb(255, 235, 178);
+        border: 2px solid gray;
+    }
+
+    td::before {
+        content: attr(data-date);
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        padding: 5px;
+        width: 40%;
+    }
 }
-
-thead tr {
-    display: none;
-}
-
-caption {
-    color: white;
-    background-color: gray;
-    font-size: 1.5em;
-    line-height: 2em;
-}
-
-td {
-    border: 1px dotted gray;
-    color: rgb(11, 12, 145);
-    position: relative;
-    padding-left: 40%;
-    min-height: 40px;
-}
-
-tr:nth-of-type(odd) {
-    background: rgb(255, 235, 178);
-    border: 2px solid gray;
-
-}
-
-td::before {
-    content: attr(data-date);
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    padding: 5px;
-    width: 40%;
-
-}
-
-}
-/*  */
-
 
 /* =============================================
-   Tablet and Desktop Styles: greater than 640px
-   =============================================
+  Tablet and Desktop Styles: greater than 640px
+  =============================================
 */
 
 @media only screen and (min-width: 641px) {
 
     table {
-        background: url(1gt_photo1.png) no-repeat 40%;
+        background: url(lht_photo1.png) no-repeat 40%;
         background-position: bottom right;
         border: 6px double rgb(154, 64, 3);
         border-collapse: collapse;
@@ -84,7 +76,8 @@ td::before {
         width: 85%;
     }
 
-    th, td {
+    th,
+    td {
         border: 1px solid gray;
         font-size: .85em;
         font-weight: normal;
@@ -93,5 +86,26 @@ td::before {
         width: 14.28%;
         word-wrap: break-word;
     }
-    
+
+    td {
+        background: rgba(171, 171, 171, 0.6);
+        color: rgb(11, 12, 145);
+    }
+
+    td[data-date*="Feb"] {
+        background: rgba(232, 214, 148, 0.6);
+        box-shadow: inset gray 0 0 20px;
+    }
+
+    caption {
+        vertical-align: top;
+        text-align: center;
+        padding-bottom: 10px;
+        font-size: 1.2em;
+        letter-spacing: 3px;
+    }
+
+    thead th {
+        background: rgb(154, 64, 3);
+    }
 }

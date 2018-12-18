@@ -4,19 +4,16 @@
    New Perspectives on HTML and CSS, 7th Edition
    Tutorial 6
    Case Problem 3
-
    Columns Style Sheet
-   Author: Melinda Chirila
-   Date:   12/17/2018
-
+   Author: Melinda C
+   Date:   12-18-18
    Filename:   lht_columns.css
-
 */
 
 
 
 /* Column Styles */
-
+/* the article will split into different columns and a line between that's red  */
 article {
     column-width: 260px;
     column-gap: 20px;
